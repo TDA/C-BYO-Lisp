@@ -4,7 +4,17 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <editline/readline.h>
+// cross platform repl, with preprocessor statements
+#ifdef _WIN32
+    #include <string.h>
+    // here we need to stub both readline and history, as windows doesnt have editline
+
+    void add_history(char* state) {
+    // do nothing, as windows has this behavior by default
+    }
+#else
+    #include <editline/readline.h>
+#endif
 
 int main(int argc, char *argv[]) {
     puts("LiSpy Version 0.0.0.0.1");
