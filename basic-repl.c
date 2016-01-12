@@ -23,6 +23,9 @@ int main(int argc, char *argv[]) {
         // i/p
         // fgets(input, 2048, stdin);
 
+        // lets add to memory, so it can be a proper repl
+        add_history(input);
+
         printf("No you are a %s\n", input);
 
         // lets free the memory used
