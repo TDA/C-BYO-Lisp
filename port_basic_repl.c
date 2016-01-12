@@ -4,13 +4,26 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+
+static int MAX_LENGTH = 2048;
+static char buffer[MAX_LENGTH] ;
+
 // cross platform repl, with preprocessor statements
 #ifdef _WIN32
     #include <string.h>
     // here we need to stub both readline and history, as windows doesnt have editline
+    char* readline(char* prompt) {
+        fputs(prompt, stdout);
+        fgets(buffer, MAX_LENGTH, stdin);
+        char* input = malloc(strlen(buffer) + 1);
+        // we need to manually append the \0 or null termination wont occur :(
+        strncpy(input, buffer, MAX_LENGTH);
+        input[strlen(input) - 1] = '\0';
+        return input;
+    }
 
     void add_history(char* state) {
-    // do nothing, as windows has this behavior by default
+        // do nothing, as windows has this behavior by default
     }
 #else
     #include <editline/readline.h>
@@ -19,7 +32,6 @@
 int main(int argc, char *argv[]) {
     puts("LiSpy Version 0.0.0.0.1");
     puts("Press Ctrl+c to Exit\n");
-
     // infinite-loop
     while (1) {
         // o/p
