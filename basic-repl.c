@@ -3,6 +3,9 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <editline/readline.h>
+#include <editline/history.h>
 
 static char input[2048];
 
@@ -13,12 +16,14 @@ int main(int argc, char *argv[]) {
     // infinite-loop
     while (1) {
         // o/p
-        fputs('LiSpy>', stdout);
+        // changing fputs + fgets into readline, lets you hold memory as well
+        // fputs("LiSpy> ", stdout);
 
+        // automatically strips the \n, so we might have to add it before printing
+        input = readline("LiSpy> ");
         // i/p
-        fgets(input, 2048, stdin);
+        // fgets(input, 2048, stdin);
 
         printf("No you are a %s", input);
     }
-    return 0;
 }
