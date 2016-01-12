@@ -1,4 +1,5 @@
-CFLAGS=-std=c99 -Wall -g
+# lreadline needed for using readline
+CFLAGS=-std=c99 -Wall -g -lreadline
 run:
 	#gcc-4.9 ${CFLAGS} $(1).c -o $(1).out
 	cc ${CFLAGS} $(1).c -o $(1)
