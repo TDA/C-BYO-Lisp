@@ -1,5 +1,5 @@
-# lreadline needed for using readline
-CFLAGS=-std=c99 -Wall -g -lreadline
+# ledit needed for using readline and history
+CFLAGS=-std=c99 -Wall -g -ledit
 run:
 	#gcc-4.9 ${CFLAGS} $(1).c -o $(1).out
 	cc ${CFLAGS} $(1).c -o $(1)
