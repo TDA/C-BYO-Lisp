@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
     mpc_parser_t* Doge      = mpc_new("doge");
 
 
-    // multiline string in C
+    // multi line string in C
     // Grammar description in a proper grammar style :P
     mpca_lang(MPCA_LANG_DEFAULT,
               "\
