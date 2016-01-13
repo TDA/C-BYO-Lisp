@@ -9,11 +9,11 @@ int main(int argc, char *argv[]) {
     // Create an Adjective Parser
     mpc_parser_t* Adjective = mpc_new("adjective");
     // Create an Noun Parser
-    mpc_parser_t* Noun      = mpc_new("noun");
+    mpc_parser_t* Noun = mpc_new("noun");
     // Create a Phrase parser, Phrase = <Adjective> <Noun>
-    mpc_parser_t* Phrase    = mpc_new("phrase");
+    mpc_parser_t* Phrase = mpc_new("phrase");
     // Create Doge using the rest
-    mpc_parser_t* Doge      = mpc_new("doge");
+    mpc_parser_t* Doge = mpc_new("doge");
 
 
     // multi line string in C

@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static int MAX_LENGTH = 2048;
+static const int MAX_LENGTH = 2048;
 static char buffer[MAX_LENGTH] ;
 
 // cross platform repl, with preprocessor statements
