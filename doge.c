@@ -2,7 +2,9 @@
 // Created by Sai Prashanth Chandramouli on 1/13/16.
 //
 
-#include <mpc.h>
+// "" searches current dir first, while <> searches
+// system first :D wow!
+#include "mpc.h"
 
 int main(int argc, char *argv[]) {
 
@@ -23,7 +25,7 @@ int main(int argc, char *argv[]) {
     );
 
     // Build a Phrase parser, Phrase = <Adjective> <Noun>
-    mpc_parser_t* Noun = mpc_and( 2, // no of arguments
+    mpc_parser_t* Phrase = mpc_and( 2, // no of arguments
                                  mpcf_strfold, // how to add up the individual tokens
                                  Adjective,
                                  Noun,
