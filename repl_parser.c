@@ -6,13 +6,12 @@
 #include <stdlib.h>
 #include "mpc.h"
 
-static const int MAX_LENGTH = 2048;
-static char buffer[MAX_LENGTH];
-
 // cross platform repl, with preprocessor statements
 #ifdef _WIN32
 #include <string.h>
     // here we need to stub both readline and history, as windows doesnt have editline
+    static const int MAX_LENGTH = 2048;
+    static char buffer[MAX_LENGTH];
     char* readline(char* prompt) {
         fputs(prompt, stdout);
         fgets(buffer, MAX_LENGTH, stdin);
@@ -73,7 +72,7 @@ int main(int argc, char *argv[]) {
 
         if (mpc_parse("<stdin>", // input stream
                       input, // where to store it
-                      Lispy, // which grammar to use for parsing
+                      LiSpy, // which grammar to use for parsing
                       &result) // store result in this
             // mpc_parse returns 1 on success, 0 on failure, so can use as a conditional
                 ) {
